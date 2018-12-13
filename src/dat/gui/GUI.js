@@ -491,6 +491,17 @@ common.extend(
 
   /** @lends GUI.prototype */
   {
+    /**
+     * Setting Language.
+     *
+     * @param lang   en | zh
+     *
+     * @example
+     * gui.setLocale('zh');
+     */
+    setLocale: function(lang) {
+      locales.locale = lang
+    },
 
     /**
      * Adds a new {@link Controller} to the GUI. The type of controller created

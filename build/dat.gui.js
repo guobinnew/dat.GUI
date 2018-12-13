@@ -1981,6 +1981,9 @@ GUI._keydownHandler = function (e) {
 dom.bind(window, 'keydown', GUI._keydownHandler, false);
 Common.extend(GUI.prototype,
 {
+  setLocale: function setLocale(lang) {
+    locales.locale = lang;
+  },
   add: function add(object, property) {
     return _add(this, object, property, {
       factoryArgs: Array.prototype.slice.call(arguments, 2)

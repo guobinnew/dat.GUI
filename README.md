@@ -30,6 +30,31 @@ import * as dat from 'dat.gui';
 const gui = new dat.GUI();
 ```
 
+## Usage
+Language (en | zh), default is zh
+
+```js
+gui.setLocale('zh')
+```
+
+Property Title
+
+```js
+var Options = function() {
+  this.message = 'dat.gui';
+  this.speed = 0.8;
+};
+
+// old 
+gui.add(text, 'message');
+gui.add(text, 'speed', -5, 5);
+
+// new
+gui.add(text, {key:'message', title:'消息');
+gui.add(text, {key:'speed', title:'速度'}, -5, 5);
+
+```
+
 ## Directory Contents
 
 ```
