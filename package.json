@@ -1,5 +1,5 @@
 {
-  "name": "dat.gui",
+  "name": "dat.guix",
   "version": "0.7.3",
   "description": "A lightweight graphical user interface for changing variables in JavaScript.",
   "main": "build/dat.gui.js",
@@ -70,9 +70,5 @@
       "no-bitwise": 0,
       "no-plusplus": 0
     }
-  },
-  "dependencies": {
-    "di18n-translate": "^0.0.9",
-    "i18n": "^0.8.3"
   }
 }

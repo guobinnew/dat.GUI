@@ -30,7 +30,7 @@ class FunctionController extends Controller {
     const _this = this;
 
     this.__button = document.createElement('div');
-    this.__button.innerHTML = text === undefined ? locales.t('Fire') : text;
+    this.__button.innerHTML = text === undefined ? locales.$t('Fire') : text;
 
     dom.bind(this.__button, 'click', function(e) {
       e.preventDefault();

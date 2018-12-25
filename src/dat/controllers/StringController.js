@@ -40,6 +40,9 @@ class StringController extends Controller {
 
     this.__input = document.createElement('input');
     this.__input.setAttribute('type', 'text');
+    if (this.readOnly) {
+      this.__input.setAttribute('readonly', 'readonly');
+    }
 
     dom.bind(this.__input, 'keyup', onChange);
     dom.bind(this.__input, 'change', onChange);

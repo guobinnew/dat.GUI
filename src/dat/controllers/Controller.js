@@ -22,10 +22,12 @@ class Controller {
   constructor(object, property) {
     let prop = null;
     let title = null;
+    let readOnly = false;
 
     if (common.isObject(property)) {
       prop = property.key;
       title = property.title;
+      readOnly = !!property.readOnly;
     } else {
       prop = property;
       title = property;
@@ -55,6 +57,12 @@ class Controller {
      * @type {String}
      */
     this.title = title;
+
+    /**
+     * The property is readOnly
+     * @type {Boolean}
+     */
+    this.readOnly = readOnly;
 
     /**
      * The function to be called on change.
