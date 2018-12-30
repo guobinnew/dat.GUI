@@ -172,6 +172,15 @@ $button-height: 20px;
     text-overflow: ellipsis;
   }
 
+  .function-name {
+    cursor: default;
+    float: left;
+    clear: left;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
   /** Controller-half (right) */
   .c {
     float: left;

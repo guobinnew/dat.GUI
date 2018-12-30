@@ -1157,7 +1157,12 @@ function add(gui, object, property, params) {
   dom.addClass(controller.domElement, 'c');
 
   const name = document.createElement('span');
-  dom.addClass(name, 'property-name');
+  if (controller instanceof FunctionController) {
+    dom.addClass(name, 'function-name');
+  } else {
+    dom.addClass(name, 'property-name');
+  }
+
   name.innerHTML = controller.title;
 
   const container = document.createElement('div');
