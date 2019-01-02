@@ -21,8 +21,10 @@ import common from '../utils/common';
 
 const ControllerFactory = function (object, property) {
   let prop = null;
+  let readOnly = false;
   if (common.isObject(property)) {
     prop = property.key;
+    readOnly = !!property.readOnly;
   } else {
     prop = property;
   }
@@ -36,7 +38,7 @@ const ControllerFactory = function (object, property) {
   // Providing a map?
   if (common.isNumber(initialValue)) {
     // Has min and max? (slider)
-    if (common.isNumber(arguments[2]) && common.isNumber(arguments[3])) {
+    if (common.isNumber(arguments[2]) && common.isNumber(arguments[3]) && !readOnly) {
       // has step?
       if (common.isNumber(arguments[4])) {
         return new NumberControllerSlider(object, property,

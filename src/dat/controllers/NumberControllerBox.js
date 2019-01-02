@@ -86,6 +86,9 @@ class NumberControllerBox extends NumberController {
 
     this.__input = document.createElement('input');
     this.__input.setAttribute('type', 'text');
+    if (this.readOnly) {
+      this.__input.setAttribute('readonly', 'readonly');
+    }
 
     // Makes it so manually specified values are not truncated.
 

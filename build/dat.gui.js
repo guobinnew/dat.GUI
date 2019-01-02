@@ -1176,6 +1176,9 @@ var NumberControllerBox = function (_NumberController) {
     }
     _this2.__input = document.createElement('input');
     _this2.__input.setAttribute('type', 'text');
+    if (_this2.readOnly) {
+      _this2.__input.setAttribute('readonly', 'readonly');
+    }
     dom.bind(_this2.__input, 'change', onChange);
     dom.bind(_this2.__input, 'blur', onBlur);
     dom.bind(_this2.__input, 'mousedown', onMouseDown);
@@ -1599,8 +1602,10 @@ var saveDialogContents = "<div id=\"dg-save\" class=\"dg dialogue\">\n\n  Here's
 
 var ControllerFactory = function ControllerFactory(object, property) {
   var prop = null;
+  var readOnly = false;
   if (Common.isObject(property)) {
     prop = property.key;
+    readOnly = !!property.readOnly;
   } else {
     prop = property;
   }
@@ -1609,7 +1614,7 @@ var ControllerFactory = function ControllerFactory(object, property) {
     return new OptionController(object, property, arguments[2]);
   }
   if (Common.isNumber(initialValue)) {
-    if (Common.isNumber(arguments[2]) && Common.isNumber(arguments[3])) {
+    if (Common.isNumber(arguments[2]) && Common.isNumber(arguments[3]) && !readOnly) {
       if (Common.isNumber(arguments[4])) {
         return new NumberControllerSlider(object, property, arguments[2], arguments[3], arguments[4]);
       }
